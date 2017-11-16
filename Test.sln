@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTEST", "MVCTEST\MVCTEST.csproj", "{35192187-B318-49BA-8A9F-8708A7828B84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35192187-B318-49BA-8A9F-8708A7828B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35192187-B318-49BA-8A9F-8708A7828B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35192187-B318-49BA-8A9F-8708A7828B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35192187-B318-49BA-8A9F-8708A7828B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
