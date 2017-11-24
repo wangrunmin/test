@@ -1,0 +1,146 @@
+        public string 采购合同(string sid, string cln, string con)
+        {
+            string url = domain + "api/EPSD/CreatePurchase";
+            List<FormItem> formItems = new List<FormItem>();
+            formItems.Add(new FormItem() { Key = "SupplierID", Value = sid });
+            formItems.Add(new FormItem() { Key = "CloudNumber", Value = cln });
+            formItems.Add(new FormItem() { Key = "ContractNumber", Value = con });
+            #region Form参数设置
+            formItems.Add(new FormItem() { Key = "MakeDate", Value = DateTime.Now.ToString("yyyy-MM-dd") });
+            formItems.Add(new FormItem() { Key = "Preparer", Value = "制单人：张三" });
+            formItems.Add(new FormItem() { Key = "Department", Value = "开发部" });
+            formItems.Add(new FormItem() { Key = "Counterman", Value = "测试" });
+            formItems.Add(new FormItem() { Key = "BusinessUnit", Value = "测试" });
+            formItems.Add(new FormItem() { Key = "PurchasseContractType", Value = "自有项目" });
+            formItems.Add(new FormItem() { Key = "CooperationAssociationType", Value = "" });
+            formItems.Add(new FormItem() { Key = "ProjectType", Value = "工程类" });
+            formItems.Add(new FormItem() { Key = "SupplierName", Value = "组织架构带出" });
+            formItems.Add(new FormItem() { Key = "ContractDate", Value = DateTime.Now.ToString("yyyy-MM-dd") });
+            formItems.Add(new FormItem() { Key = "ContractLocation", Value = "测试地点" });
+            formItems.Add(new FormItem() { Key = "SupplierClass", Value = "自动生成" });
+            formItems.Add(new FormItem() { Key = "SupplierLevel", Value = "自动生成" });
+            formItems.Add(new FormItem() { Key = "SupplierGrade", Value = "自动生成" });
+            formItems.Add(new FormItem() { Key = "DeliveryDate", Value = DateTime.Now.ToString("yyyy-MM-dd") });
+            formItems.Add(new FormItem() { Key = "WarrantyMonth", Value = "12" });
+            formItems.Add(new FormItem() { Key = "ContractAmount", Value = "10000" });
+            formItems.Add(new FormItem() { Key = "SummaryAmounts", Value = "10000" });
+            formItems.Add(new FormItem() { Key = "BudgetAmount", Value = "10000" });
+            formItems.Add(new FormItem() { Key = "PurchaseAmount", Value = "10000" });
+            formItems.Add(new FormItem() { Key = "CostReductionAmount", Value = "10000" });
+            formItems.Add(new FormItem() { Key = "CostReductionRate", Value = "自动计算" });
+            formItems.Add(new FormItem() { Key = "Consignee", Value = "带有附件的采购合同测试" });
+            formItems.Add(new FormItem() { Key = "Description", Value = "测试说明，预算金额等等是自动汇总的，上面的数据只是测试时使用的错误信息" });
+            formItems.Add(new FormItem() { Key = "FileRelativeUrl", FileName = "合同附件测试.txt", FileContent = System.IO.File.OpenRead(@"D:\合同附件测试.txt") });
+            formItems.Add(new FormItem() { Key = "PartALocation", Value = "测试甲方信息" });
+            formItems.Add(new FormItem() { Key = "PartATaxNumber", Value = "测试甲方信息" });
+            formItems.Add(new FormItem() { Key = "PartABank", Value = "测试甲方信息" });
+            formItems.Add(new FormItem() { Key = "PartAAccount", Value = "测试甲方信息" });
+            formItems.Add(new FormItem() { Key = "PartBLocation", Value = "测试乙方信息" });
+            formItems.Add(new FormItem() { Key = "PartBTaxNumber", Value = "测试乙方信息" });
+            formItems.Add(new FormItem() { Key = "PartBBank", Value = "测试乙方信息" });
+            formItems.Add(new FormItem() { Key = "PartBAccount", Value = "测试乙方信息" });
+            formItems.Add(new FormItem() { Key = "ProjectList_JSON", Value = "{\"List\":[{\"CloudLineNumber\":\"CLN001\",\"ProjectName\":\"测试项目1\",\"ProjectNumber\":\"BM001\",\"PurchaseAmount\":\"10000\",\"BudgetAmount\":\"15000\",\"AccountBudget\":\"10000\",\"ProjectPurchasedAmount\":\"5000\",\"CostTrend\":\"不变\",\"CostReductionAmount\":\"5000\",\"CostReductionRate\":\"0.3333\"},{\"CloudLineNumber\":\"CLN002\",\"ProjectName\":\"测试项目2\",\"ProjectNumber\":\"BM002\",\"PurchaseAmount\":\"10000\",\"BudgetAmount\":\"15000\",\"AccountBudget\":\"10000\",\"ProjectPurchasedAmount\":\"5000\",\"CostTrend\":\"不变\",\"CostReductionAmount\":\"5000\",\"CostReductionRate\":\"0.3333\"}]}" });
+            formItems.Add(new FormItem() { Key = "InventoryList_JSON", Value = "{\"List\":[{\"CloudLineNumber\":\"CLN001\",\"ProductNumber\":\"BM001\",\"ProductName\":\"测试物品\",\"Size\":\"测试规格\",\"Unit\":\"个\",\"TaxRate\":\"0.07\",\"PurchaseQuantity\":\"100\",\"ContractPrice\":\"100\",\"ContractTotal\":\"10000\",\"BidPrice\":\"100\",\"BidTotal\":\"10000\",\"BudgetPrice\":\"120\",\"BudgetTotal\":\"12000\",\"ProductClass\":\"测试类目\",\"ProjectName\":\"测试项目\",\"ProjectNumber\":\"BM001\",\"BudgetAccount\":\"测试科目\",\"EnquiryPrice\":\"150\",\"Note\":\"测试备注\"},{\"CloudLineNumber\":\"CLN002\",\"ProductNumber\":\"BM002\",\"ProductName\":\"测试物品2\",\"Size\":\"测试规格2\",\"Unit\":\"个\",\"TaxRate\":\"0.07\",\"PurchaseQuantity\":\"100\",\"ContractPrice\":\"100\",\"ContractTotal\":\"10000\",\"BidPrice\":\"100\",\"BidTotal\":\"10000\",\"BudgetPrice\":\"120\",\"BudgetTotal\":\"12000\",\"ProductClass\":\"测试类目2\",\"ProjectName\":\"测试项目\",\"ProjectNumber\":\"BM001\",\"BudgetAccount\":\"测试科目\",\"EnquiryPrice\":\"150\",\"Note\":\"测试备注\"}]}" });
+            formItems.Add(new FormItem() { Key = "ContractTerms_JSON", Value = "{\"List\":[{\"CloudLineNumber\":\"CLN001\",\"PaymentStage\":\"测试阶段1\",\"PaymentTerm\":\"测试条件2\",\"ExpectedPaymentCycle\":\"测试付款周期\",\"PaymentPercent\":\"50%\",\"PaymentAmount\":\"5000\"},{\"CloudLineNumber\":\"CLN002\",\"PaymentStage\":\"测试阶段2\",\"PaymentTerm\":\"测试条件2\",\"ExpectedPaymentCycle\":\"测试付款周期\",\"PaymentPercent\":\"50%\",\"PaymentAmount\":\"5000\"}]}" });
+            #endregion
+            return FormSimulator.PostForm(url, formItems);
+        }    
+	
+	
+	
+	
+	
+	public class FormSimulator
+    {
+        public static string PostForm(string url, List<FormItem> formItems, CookieContainer cookieContainer = null, string refererUrl = null, Encoding encoding = null, int timeOut = 20000)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            #region 初始化请求对象  
+            request.Method = "POST";
+            request.Timeout = timeOut;
+            request.Accept = "*/*";
+            request.KeepAlive = true;
+            request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36";
+            request.Referer = string.IsNullOrEmpty(refererUrl) == true ? request.Referer : refererUrl;
+            request.CookieContainer = cookieContainer == null ? request.CookieContainer : cookieContainer;
+            #endregion
+            string boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x");//分隔符  
+            request.ContentType = string.Format("multipart/form-data; boundary={0}", boundary);
+            var postStream = new MemoryStream();
+            #region 处理Form表单请求内容  
+            //文件数据模板  
+            string fileFormdataTemplate = "--" + boundary + "\r\nContent-Disposition: form-data; name=\"{0}\";filename=\"{1}\"\r\nContent-Type:\"{2}\"\r\n\r\n";
+            //文本数据模板  
+            string dataFormdataTemplate = "--" + boundary + "\r\nContent-Disposition: form-data; name=\"{0}\"\r\n\r\n{1}\r\n";
+            foreach (var item in formItems)
+            {
+                string formdata = item.IsFile ? string.Format(fileFormdataTemplate, item.Key, item.FileName, item.Value) : string.Format(dataFormdataTemplate, item.Key, item.Value);
+                byte[] formdataBytes = Encoding.UTF8.GetBytes(formdata);
+                postStream.Write(formdataBytes, 0, formdataBytes.Length);
+                //写入文件内容  
+                if (item.FileContent != null && item.FileContent.Length > 0)
+                {
+                    using (var stream = item.FileContent)
+                    {
+                        byte[] buffer = new byte[1024];
+                        int bytesRead = 0;
+                        while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) != 0)
+                        {
+                            postStream.Write(buffer, 0, bytesRead);
+                        }
+                    }
+                    byte[] imgbyteend = Encoding.UTF8.GetBytes("\r\n");
+                    postStream.Write(imgbyteend, 0, imgbyteend.Length);
+                }
+            }
+            var footer = Encoding.UTF8.GetBytes("\r\n--" + boundary + "--\r\n");
+            postStream.Write(footer, 0, footer.Length);
+            #endregion
+            request.ContentLength = postStream.Length;
+            #region 输入二进制流  
+            if (postStream != null)
+            {
+                postStream.Position = 0;
+                //直接写入流  
+                Stream requestStream = request.GetRequestStream();
+                byte[] buffer = new byte[1024];
+                int bytesRead = 0;
+                while ((bytesRead = postStream.Read(buffer, 0, buffer.Length)) != 0)
+                {
+                    requestStream.Write(buffer, 0, bytesRead);
+                }
+                postStream.Close();//关闭文件访问
+            }
+            #endregion
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            if (cookieContainer != null)
+            {
+                response.Cookies = cookieContainer.GetCookies(response.ResponseUri);
+            }
+            using (Stream responseStream = response.GetResponseStream())
+            {
+                using (StreamReader myStreamReader = new StreamReader(responseStream, encoding ?? Encoding.UTF8))
+                {
+                    return myStreamReader.ReadToEnd();
+                }
+            }
+        }
+    }
+    public class FormItem
+    {
+        public bool IsFile
+        {
+            get
+            {
+                if (FileContent == null)
+                    return false;
+                if (FileContent != null && string.IsNullOrWhiteSpace(FileName))
+                    throw new Exception("上传文件时 FileName 属性值不能为空");
+                return true;
+            }
+        }
+        public string Key { set; get; }
+        public string Value { set; get; }
+        public string FileName { set; get; }
+        public Stream FileContent { set; get; }
+    }

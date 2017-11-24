@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <form id="file">
+        <input type="file" multiple name="multipleFiles" />
+        <input type="file" name="simpleFile" />
+    </form>
+    <button onclick="doSubmit()">提交</button>
+    <script>
+        function doSubmit() {
+            var formData = new FormData($("#file")[0]);
+            $.ajax({
+                url: "../File/Upload",
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (res) {
+                    var data = JSON.parse(res);
+                    for (var i = 0; i < data.length; i++) {
+                        var img = $("<img>").attr("src", "http://" + window.location.host + data[i].Url.substr(1, data[i].Url.length));
+                        $("body").append(img);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

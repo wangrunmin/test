@@ -9,19 +9,18 @@ namespace MVCTEST.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Default
+        /// <summary>描述测试文件</summary>
+        /// <param>a-String-否-物料代码</param>
+        /// <param>b-String-否-物料代码</param>
+        /// <param>c-String-否-物料代码JSON#{ "List": [{ "ID": "1", "Country": "中国", "AccountName": "张三", "AccountBank": "1212121", "AccountNumber": "1212121", "RelativeFileUrl": "~\\MenHu\\Upload\\36\\20171023100941217公开询价__1_.jpg" }] }</param>
         public string Index()
         {
-            XmlDocument doc = new XmlDocument();
-            //var bpmResponse = WebServiceHelper.sendSupplierAccess(Request.Url.Authority, currentSupplierEnt);
-            doc.LoadXml(@"<Response>
-  <Status>T</Status> 
-<BpmID>100</BpmID>
-  <REMSG>同步成功</REMSG>
-</Response>");
-            XmlNode root = doc.SelectSingleNode("Response");
-
-            return root.SelectSingleNode("Status").InnerText;
+            return "";
+        }
+        public string Index2()
+        {
+            var P_a = Request.QueryString["a"] ?? Request.Form["a"];
+            return "";
         }
     }
 }

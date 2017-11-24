@@ -1,0 +1,126 @@
+﻿(\s)*/// <[cau](\w)*>([\S])*
+<[/]*description>
+(\s)*/// </summary>
+(\s)*/// <param>----\r\n/// </summary>
+(\s)*/// </param>
+item->param
+<name>|<type>|<shifoubixu>
+</name>|</type>|</shifoubixu>->-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+中控VPN
+地址：vpnit.supconit.com
+账号xzkj04
+
+密码Abc@1234
+
+
+浙大中控供应商门户应用测试服务器
+172.20.0.44   administrator     !Q@W3e4r
+浙大中控供应商门户数据库服务器
+172.20.0.22 administrator  !Q@W3e4r
+
+
+VS删除空白行
+(?<=\r\n)\r\n
+
+#FFB11B 果
+#00FFFF 绘
+#FFFFFF 鸟
+#0000FF 海
+#FFFF00 凛
+#FF0000 姬
+#800080 希
+#ADFF2F 花
+#FFC0CB 妮
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTEST", "MVCTEST\MVCTEST.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time", "Time\Time.csproj", "{E14426E8-794C-440A-B6D3-4CDE9208222A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{77B32CA5-ADFC-430D-A094-FDC93C561181}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23491B30-6A5C-46E2-B44A-866FA0C1C2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E14426E8-794C-440A-B6D3-4CDE9208222A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14426E8-794C-440A-B6D3-4CDE9208222A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14426E8-794C-440A-B6D3-4CDE9208222A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14426E8-794C-440A-B6D3-4CDE9208222A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77B32CA5-ADFC-430D-A094-FDC93C561181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B32CA5-ADFC-430D-A094-FDC93C561181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B32CA5-ADFC-430D-A094-FDC93C561181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B32CA5-ADFC-430D-A094-FDC93C561181}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
